@@ -1,5 +1,9 @@
 sceneSetups:
-- path: Assets/Assets/Tiny_Toony_City_Demo/Scenes/Demo_Scene.unity
+- path: Assets/Scenes/SampleScene.unity
   isLoaded: 1
   isActive: 1
+  isSubScene: 0
+- path: Assets/Resources/LowPolyFPSLite/Scenes/LowPolyFPS_Lite_Demo.unity
+  isLoaded: 1
+  isActive: 0
   isSubScene: 0
