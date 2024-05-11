@@ -504,7 +504,7 @@ Transform:
   - {fileID: 6110622697601015987}
   - {fileID: 6989633950056831505}
   m_Father: {fileID: 1601847679244061305}
-  m_LocalEulerAnglesHint: {x: 0.77511704, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -1.4440751, y: 0, z: 0}
 --- !u!114 &2427025413260834617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1916,9 +1916,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d1f7cc1755647546a5c7a2fc8147056, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 2
+  sensitivity: 1.69
   yRotationLimit: 88
-  zoomSensitivity: 0.5
+  zoomSensitivity: 1
   zoomAmount: 20
   runSpeedMultiplier: 2
 --- !u!114 &8574770898469683896
@@ -2388,7 +2388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 20
   camera: {fileID: 5398879994328711983}
-  fireRate: 6
+  fireRate: 5
   hitVFX: {fileID: 5880797563127281583, guid: fe6d9ced75725454a931158e464a783b, type: 3}
   mag: 5
   ammo: 30
@@ -2542,7 +2542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad131bf1c85cff744980e2c6ea09df83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 40
+  damage: 50
   camera: {fileID: 5398879994328711983}
   fireRate: 2
   hitVFX: {fileID: 5880797563127281583, guid: fe6d9ced75725454a931158e464a783b, type: 3}
