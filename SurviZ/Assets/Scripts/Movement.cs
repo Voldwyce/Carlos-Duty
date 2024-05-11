@@ -21,6 +21,10 @@ public class Movement : MonoBehaviour
     private Vector3 smoothVelocity;
     public float smoothTime = 0.1f;
 
+    [Header("Animation")] public Animation handAnimation;
+    public AnimationClip handWalkAnimations;
+    public AnimationClip idleAnimation;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -53,25 +57,35 @@ public class Movement : MonoBehaviour
         Jump();
     }
 
-    void Move()
+void Move()
+{
+    Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+    input.Normalize();
+
+    float speed = isRunning ? sprintSpeed : walkSpeed;
+    if (!isGrounded)
+        speed *= airControl;
+
+    handAnimation.clip = handWalkAnimations;
+    handAnimation.Play();
+
+    Vector3 targetVelocity = transform.forward * input.y * speed + transform.right * input.x * speed;
+    targetVelocity.y = rb.velocity.y;
+
+    // Aplicar suavizado
+    rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref smoothVelocity, smoothTime);
+
+    // Si no hay entrada de movimiento, detener al jugador más rápidamente
+    if (input.magnitude < 0.5f && isGrounded)
+        rb.velocity *= 0.8f;
+
+    // Reproducir animación de inactividad si no hay entrada de movimiento
+    if (input.magnitude < 0.5f && isGrounded)
     {
-        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        input.Normalize();
-
-        float speed = isRunning ? sprintSpeed : walkSpeed;
-        if (!isGrounded)
-            speed *= airControl;
-
-        Vector3 targetVelocity = transform.forward * input.y * speed + transform.right * input.x * speed;
-        targetVelocity.y = rb.velocity.y;
-
-        // Aplicar suavizado
-        rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref smoothVelocity, smoothTime);
-
-        // Si no hay entrada de movimiento, detener al jugador más rápidamente
-        if (input.magnitude < 0.5f && isGrounded)
-            rb.velocity *= 0.8f;
+        handAnimation.clip = idleAnimation;
+        handAnimation.Play();
     }
+}
 
     void Jump()
     {
