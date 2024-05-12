@@ -1835,6 +1835,9 @@ PrefabInstance:
       addedObject: {fileID: 5446794490891242773}
     - targetCorrespondingSourceObject: {fileID: 6644603938449114179, guid: 35d11d1e1dd397942b5024ee78060e27, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 4909312265471946572}
+    - targetCorrespondingSourceObject: {fileID: 6644603938449114179, guid: 35d11d1e1dd397942b5024ee78060e27, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 8574770898469683896}
     - targetCorrespondingSourceObject: {fileID: 6644603938449114179, guid: 35d11d1e1dd397942b5024ee78060e27, type: 3}
       insertIndex: -1
@@ -1921,6 +1924,19 @@ MonoBehaviour:
   zoomSensitivity: 1
   zoomAmount: 20
   runSpeedMultiplier: 2
+--- !u!114 &4909312265471946572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6670927633519529542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 413b3f26fea9eb8488d466bee019f325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoClip: {fileID: 32900000, guid: 6f659a075aa00bc4db38da17f1f8c944, type: 3}
 --- !u!114 &8574770898469683896
 MonoBehaviour:
   m_ObjectHideFlags: 0
