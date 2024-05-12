@@ -17,6 +17,7 @@ ScriptsOnlyBuild:
     - Leaderboard
     - MouseLook
     - Movement
+    - MovimientoDerechaIzquierda
     - PlayerPhotonSoundMG
     - PlayerSetup
     - RoomItemButton
@@ -69,6 +70,11 @@ ScriptsOnlyBuild:
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshPro
     - TMPro.TextMeshProUGUI
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -350,6 +356,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 8034}
     - Class: 114
       Script: {instanceID: 8338}
+    - Class: 114
+      Script: {instanceID: 121578}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -2427,6 +2435,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 7a8065328a874966a6b77b7aa99744be
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlayerController
+  - hash:
+      serializedVersion: 2
+      Hash: 415db0f57d138b1e13b955473e82f88b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: MovimientoDerechaIzquierda
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
