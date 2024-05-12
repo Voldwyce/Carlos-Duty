@@ -164,7 +164,7 @@ public class Weapon : MonoBehaviour
                 {
                     RoomManager.instance.kills++;
                     RoomManager.instance.SetHashes();
-                    // PhotonNetwork.LocalPlayer.AddScore(1);
+                    PhotonNetwork.LocalPlayer.AddScore(1);
                 }
 
                 hit.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, (object)damage);

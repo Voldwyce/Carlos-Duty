@@ -46,8 +46,6 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
-    PhotonUnityNetworking.Editor.dll:
-    - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonRigidbodyView
     - Photon.Pun.PhotonTransformView
@@ -154,6 +152,9 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: RoomManager
     methodName: JoinRoomButton
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
   - assembly: Assembly-CSharp
     fullTypeName: RoomManager
     methodName: ChangeUsername
@@ -244,8 +245,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1580}
-    - Class: 114
       Script: {instanceID: 1582}
     - Class: 114
       Script: {instanceID: 1584}
@@ -254,101 +253,103 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1588}
     - Class: 114
-      Script: {instanceID: 1592}
+      Script: {instanceID: 1590}
     - Class: 114
-      Script: {instanceID: 1596}
+      Script: {instanceID: 1594}
     - Class: 114
-      Script: {instanceID: 1600}
+      Script: {instanceID: 1598}
     - Class: 114
-      Script: {instanceID: 1690}
+      Script: {instanceID: 1602}
     - Class: 114
-      Script: {instanceID: 1946}
+      Script: {instanceID: 1608}
     - Class: 114
-      Script: {instanceID: 2264}
+      Script: {instanceID: 1694}
     - Class: 114
-      Script: {instanceID: 2726}
+      Script: {instanceID: 1950}
     - Class: 114
-      Script: {instanceID: 2942}
+      Script: {instanceID: 2268}
     - Class: 114
-      Script: {instanceID: 3160}
+      Script: {instanceID: 2730}
     - Class: 114
-      Script: {instanceID: 3264}
+      Script: {instanceID: 2946}
     - Class: 114
-      Script: {instanceID: 3410}
+      Script: {instanceID: 3164}
     - Class: 114
-      Script: {instanceID: 3706}
+      Script: {instanceID: 3268}
     - Class: 114
-      Script: {instanceID: 4002}
+      Script: {instanceID: 3414}
     - Class: 114
-      Script: {instanceID: 4008}
+      Script: {instanceID: 3710}
     - Class: 114
-      Script: {instanceID: 4010}
+      Script: {instanceID: 4006}
     - Class: 114
-      Script: {instanceID: 4062}
+      Script: {instanceID: 4012}
     - Class: 114
-      Script: {instanceID: 4174}
+      Script: {instanceID: 4014}
     - Class: 114
-      Script: {instanceID: 4200}
+      Script: {instanceID: 4066}
     - Class: 114
-      Script: {instanceID: 4298}
+      Script: {instanceID: 4178}
     - Class: 114
-      Script: {instanceID: 4314}
+      Script: {instanceID: 4204}
     - Class: 114
-      Script: {instanceID: 4554}
+      Script: {instanceID: 4302}
     - Class: 114
-      Script: {instanceID: 4578}
+      Script: {instanceID: 4318}
     - Class: 114
-      Script: {instanceID: 4880}
+      Script: {instanceID: 4558}
     - Class: 114
-      Script: {instanceID: 5016}
+      Script: {instanceID: 4582}
     - Class: 114
-      Script: {instanceID: 5144}
+      Script: {instanceID: 4884}
     - Class: 114
-      Script: {instanceID: 5278}
+      Script: {instanceID: 5020}
     - Class: 114
-      Script: {instanceID: 5336}
+      Script: {instanceID: 5148}
     - Class: 114
-      Script: {instanceID: 5690}
+      Script: {instanceID: 5282}
     - Class: 114
-      Script: {instanceID: 5732}
+      Script: {instanceID: 5340}
     - Class: 114
-      Script: {instanceID: 6078}
+      Script: {instanceID: 5694}
     - Class: 114
-      Script: {instanceID: 6306}
+      Script: {instanceID: 5736}
     - Class: 114
-      Script: {instanceID: 6396}
+      Script: {instanceID: 6082}
     - Class: 114
-      Script: {instanceID: 6406}
+      Script: {instanceID: 6310}
     - Class: 114
-      Script: {instanceID: 6414}
+      Script: {instanceID: 6400}
     - Class: 114
-      Script: {instanceID: 6416}
+      Script: {instanceID: 6410}
     - Class: 114
-      Script: {instanceID: 6556}
+      Script: {instanceID: 6418}
     - Class: 114
-      Script: {instanceID: 6780}
+      Script: {instanceID: 6420}
     - Class: 114
-      Script: {instanceID: 6840}
+      Script: {instanceID: 6560}
     - Class: 114
-      Script: {instanceID: 7012}
+      Script: {instanceID: 6784}
     - Class: 114
-      Script: {instanceID: 7260}
+      Script: {instanceID: 6844}
     - Class: 114
-      Script: {instanceID: 7540}
+      Script: {instanceID: 7016}
     - Class: 114
-      Script: {instanceID: 7544}
+      Script: {instanceID: 7264}
     - Class: 114
-      Script: {instanceID: 7652}
+      Script: {instanceID: 7526}
     - Class: 114
-      Script: {instanceID: 7900}
+      Script: {instanceID: 7546}
     - Class: 114
-      Script: {instanceID: 8028}
+      Script: {instanceID: 7550}
     - Class: 114
-      Script: {instanceID: 8332}
+      Script: {instanceID: 7658}
     - Class: 114
-      Script: {instanceID: 78676}
+      Script: {instanceID: 7906}
     - Class: 114
-      Script: {instanceID: 91656}
+      Script: {instanceID: 8034}
+    - Class: 114
+      Script: {instanceID: 8338}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -446,6 +447,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: CanvasScaler
+  - hash:
+      serializedVersion: 2
+      Hash: e0f7618d4bf96f4da584d9cc0060e71c
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlayerPhotonSoundMG
   - hash:
       serializedVersion: 2
       Hash: b46ebe2d180071684006343f56bca06a
@@ -1768,7 +1775,7 @@ ScriptsOnlyBuild:
     className: UnityOnTriggerStay2DMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 4b8ff605c13fd1a11218cbe9000cf6c5
+      Hash: 15ab9bf9621d4875d0927098f006a7f3
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: RoomManager
@@ -2146,6 +2153,12 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
+      Hash: 1c152a5f463cbeaa7cbf45b49393bfdb
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SendAnimationEventToSFX
+  - hash:
+      serializedVersion: 2
       Hash: 52827e7af444ede1e783e00150e93252
     assemblyName: PhotonUnityNetworking.Demos
     namespaceName: Photon.Pun.Demo.Asteroids
@@ -2414,20 +2427,8 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: e0f7618d4bf96f4da584d9cc0060e71c
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: PlayerPhotonSoundMG
-  - hash:
-      serializedVersion: 2
-      Hash: 1c152a5f463cbeaa7cbf45b49393bfdb
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: SendAnimationEventToSFX
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
   - Assets/Custom/LowPolyFPSLite/Scenes/LowPolyFPS_Lite_Demo.unity
-  playerPath: C:/Users/vengo/OneDrive/Escritorio/Test/Carlos Duty BCN Edition.exe
+  playerPath: C:/Users/vengo/OneDrive/Escritorio/Test/Carlos Duty.exe

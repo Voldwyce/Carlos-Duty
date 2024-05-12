@@ -73,6 +73,10 @@ public class WeaponSwitcher : MonoBehaviour
 
         _animation.Stop();
         _animation.Play(Draw.name);
+        // Debug de la animación
+        Debug.Log("Animation: " + Draw.name);
+
+        Debug.Log("Selected Weapon: " + selectedWeapon);
 
         int i = 0;
 

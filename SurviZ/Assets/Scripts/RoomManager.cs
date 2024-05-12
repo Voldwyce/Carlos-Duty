@@ -80,8 +80,10 @@ public class RoomManager : MonoBehaviourPunCallbacks
         try
         {
             Hashtable hash = PhotonNetwork.LocalPlayer.CustomProperties;
-            hash.Add("kills", kills);
-            hash.Add("deaths", deaths);
+
+            hash["kills"] = kills;
+            hash["deaths"] = deaths;
+
             PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
         }
         catch
