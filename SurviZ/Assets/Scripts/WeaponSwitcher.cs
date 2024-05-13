@@ -5,22 +5,22 @@ using UnityEngine;
 
 public class WeaponSwitcher : MonoBehaviour
 {
+    public PhotonView playerSetupView; // Referencia al PhotonView del jugador
+    public Animation _animation; // Referencia a la animación
+    public AnimationClip Draw; // Animación de sacar el arma
 
-    public PhotonView playerSetupView;
-    public Animation _animation;
-    public AnimationClip Draw;
-
-    private int selectedWeapon = 0;
+    private int selectedWeapon = 0; // Índice del arma seleccionada
 
     void Start()
     {
-        SelectWeapon();
+        SelectWeapon(); // Selecciona el arma al iniciar
     }
 
     void Update()
     {
         int previousSelectedWeapon = selectedWeapon;
 
+        // Cambio de arma con teclas numéricas
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             selectedWeapon = 0;
@@ -31,6 +31,7 @@ public class WeaponSwitcher : MonoBehaviour
             selectedWeapon = 1;
         }
 
+        // Cambio de arma con la rueda del ratón
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
             if (selectedWeapon >= transform.childCount - 1)
@@ -55,28 +56,32 @@ public class WeaponSwitcher : MonoBehaviour
             }
         }
 
+        // Si el arma seleccionada ha cambiado, se selecciona nuevamente
         if (previousSelectedWeapon != selectedWeapon)
         {
             SelectWeapon();
         }
     }
 
+    // Método para seleccionar el arma actual
     void SelectWeapon()
     {
-
+        // Establece el arma seleccionada para todos los jugadores
         playerSetupView.RPC("SetTPWeapon", RpcTarget.All, (object)selectedWeapon);
 
+        // Si el índice del arma seleccionada es mayor o igual al número de armas, se ajusta para evitar errores
         if (selectedWeapon >= transform.childCount)
         {
             selectedWeapon = transform.childCount - 1;
         }
 
+        // Detiene y reproduce la animación de sacar el arma
         _animation.Stop();
         _animation.Play(Draw.name);
 
-
         int i = 0;
 
+        // Activa o desactiva cada arma en función de si es la seleccionada o no
         foreach (Transform _weapon in transform)
         {
             if (i == selectedWeapon)
