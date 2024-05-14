@@ -596,7 +596,7 @@ ScriptsOnlyBuild:
     className: CurrentRoomIsVisibleProperty
   - hash:
       serializedVersion: 2
-      Hash: d08d93b6afab99fed71ffbf554a48498
+      Hash: de58e26554198c91825fccb39d2c9201
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: AmmoBox
@@ -2470,4 +2470,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
   - Assets/Custom/LowPolyFPSLite/Scenes/LowPolyFPS_Lite_Demo.unity
-  playerPath: C:/Users/vengo/OneDrive/Escritorio/Test/Carlos Duty.exe
+  playerPath: C:/arw/Carlos Duty.exe

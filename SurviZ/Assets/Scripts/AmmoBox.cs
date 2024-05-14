@@ -4,9 +4,6 @@ public class AmmoBox : MonoBehaviour
 {
     public int cantidadDeMunición = 6; // Cantidad de munición que contiene la caja
 
-    // Tiempo en segundos antes de que la caja se rompa
-    public float spawnBox = 30f;
-
     void Update()
     {
         // Detectar la pulsación de la tecla F
@@ -29,20 +26,8 @@ public class AmmoBox : MonoBehaviour
             {
                 arma.RecogerMunición(cantidadDeMunición);
             }
-            // Desactivar la caja de munición después de un breve retraso para permitir que se reproduzca el sonido
-            DesactivarCajaDespuésDeRomperse();
         }
     }
 
-    void DesactivarCajaDespuésDeRomperse()
-    {
-        // Desactivar la caja de munición después de un tiempo especificado
-        Invoke("DesactivarCaja", spawnBox);
-    }
 
-    void DesactivarCaja()
-    {
-        // Desactivar la caja de munición
-        gameObject.SetActive(false);
-    }
 }

@@ -34,6 +34,9 @@ public class RoomManager : MonoBehaviourPunCallbacks
     private float gameStartTime; // Tiempo de inicio del juego
     public float gameTime = 300f; // Duración total del juego en segundos
 
+    // Variable para almacenar el último punto de aparición utilizado por cada jugador
+    private Dictionary<int, Transform> lastSpawnPoints = new Dictionary<int, Transform>();
+
     void Awake()
     {
         instance = this; // Establece la instancia única de RoomManager
@@ -71,18 +74,51 @@ public class RoomManager : MonoBehaviourPunCallbacks
     // Método para respawnear al jugador
     public void Respawn()
     {
-        // Selecciona un punto de aparición aleatorio
-        Transform spawnPoint = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)];
+        // Obtiene el ID único del jugador local
+        int playerID = PhotonNetwork.LocalPlayer.ActorNumber;
+
+        // Selecciona un punto de aparición aleatorio que no sea el mismo que el último utilizado por el jugador
+        Transform spawnPoint = GetRandomSpawnPoint(playerID);
+
         // Instancia al jugador en el punto de aparición seleccionado
         GameObject _player = PhotonNetwork.Instantiate(player.name, spawnPoint.position, Quaternion.identity);
+
         // Establece al jugador como local
         _player.GetComponent<PlayerSetup>().IsLocalPlayer();
+
         // Establece la propiedad isLocalPlayer de la salud del jugador como verdadera
         _player.GetComponent<Health>().isLocalPlayer = true;
+
         // Establece el nombre de usuario del jugador
         _player.GetComponent<PhotonView>().RPC("SetUsername", RpcTarget.AllBuffered, username);
+
         // Establece el nombre de usuario del jugador local
         PhotonNetwork.LocalPlayer.NickName = username;
+
+        // Actualiza el registro del último punto de aparición utilizado por el jugador
+        lastSpawnPoints[playerID] = spawnPoint;
+    }
+
+    // Método para seleccionar un punto de aparición aleatorio que no sea el mismo que el último utilizado por el jugador
+    private Transform GetRandomSpawnPoint(int playerID)
+    {
+        // Selecciona un punto de aparición aleatorio
+        Transform spawnPoint = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)];
+
+        // Verifica si el jugador tiene un registro del último punto de aparición utilizado
+        if (lastSpawnPoints.ContainsKey(playerID))
+        {
+            // Obtiene el último punto de aparición utilizado por el jugador
+            Transform lastSpawnPoint = lastSpawnPoints[playerID];
+
+            // Si el punto de aparición aleatorio es el mismo que el último utilizado por el jugador, selecciona uno diferente
+            while (spawnPoint == lastSpawnPoint)
+            {
+                spawnPoint = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)];
+            }
+        }
+
+        return spawnPoint;
     }
 
     // Método para establecer las propiedades personalizadas de los jugadores
